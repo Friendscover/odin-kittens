@@ -1,0 +1,4 @@
+<h3>  Change your favorite Kitten! </h3>
+
+<%= render 'form' %>
+<%= link_to 'Delete', kitten_path(@kitten), method: :delete, data: { confirm: "Are you sure?" } %>
