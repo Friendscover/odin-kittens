@@ -1,5 +1,9 @@
 <h2><%= @kitten.name %></h2>
 
+<% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: name %>
+<% end %>
+
 Age: <%= @kitten.age %><br />
 Cuteness: <%= @kitten.cuteness %><br />
 Softness: <%= @kitten.softness %><br />

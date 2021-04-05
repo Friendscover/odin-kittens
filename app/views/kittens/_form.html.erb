@@ -1,7 +1,15 @@
-<%= form_for @kitten do |form| %>
-  <%= form.text_field :name, placeholder: "Name" %><br />
-  <%= form.text_field :age, placeholder: "Age" %><br />
-  <%= form.text_field :cuteness, placeholder: "Cuteness" %><br />
-  <%= form.text_field :softness, placeholder: "Softness" %><br />
-  <%= form.submit %>
+<div>
+  <%= form_for @kitten do |form| %>
+    <%= form.text_field :name, placeholder: "Name" %><br />
+    <%= form.text_field :age, placeholder: "Age" %><br />
+    <%= form.text_field :cuteness, placeholder: "Cuteness" %><br />
+    <%= form.text_field :softness, placeholder: "Softness" %><br />
+    <%= form.submit %>
+  <% end %>
+</div>
+
+<% if @kitten.errors.any? %>
+  <% @kitten.errors.full_messages.each do |message| %>
+    <div style="color: red;"><%= message %></div><br>
+  <% end %>
 <% end %>
