@@ -3,4 +3,8 @@ class Kitten < ApplicationRecord
   validates :age, presence: true, numericality: { only_integer: true, less_than: 200 }
   validates :cuteness, presence: true, numericality: { only_integer: true, less_than: 10, greater_than: 0 }
   validates :softness, presence: true, numericality: { only_integer: true, less_than: 10, greater_than: 0 }
+
+  def as_json(options={})
+    super(:only => [:name, :age, :cuteness, :softness])
+  end
 end
